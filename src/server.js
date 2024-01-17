@@ -17,6 +17,10 @@ dotenv.config();
 
 // Connect to MongoDB
 connect();
+app.get('/', (req, res) => {
+    res.send('<a href="/auth/google">Authenticate with Google</a>');
+  });
+  
 
 // Express middleware
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
